@@ -8,13 +8,13 @@ INTERFACE zif_interface016 PUBLIC.
 * Dog
 * Enum: dog-breed
   CONSTANTS: BEGIN OF c_enum_dog_breed,
-               dingo TYPE string VALUE 'Dingo',
-               husky TYPE string VALUE 'Husky',
+               dingo     TYPE string VALUE 'Dingo',
+               husky     TYPE string VALUE 'Husky',
                retriever TYPE string VALUE 'Retriever',
-               shepherd TYPE string VALUE 'Shepherd',
+               shepherd  TYPE string VALUE 'Shepherd',
              END OF c_enum_dog_breed.
   TYPES: BEGIN OF dog,
-           bark TYPE abap_bool,
+           bark  TYPE abap_bool,
            breed TYPE string,
          END OF dog.
 * body_create_dog
@@ -24,7 +24,7 @@ INTERFACE zif_interface016 PUBLIC.
 * response
   TYPES: BEGIN OF response,
            success TYPE abap_bool,
-           errors TYPE STANDARD TABLE OF string WITH DEFAULT KEY,
+           errors  TYPE STANDARD TABLE OF string WITH DEFAULT KEY,
          END OF response.
 
   TYPES: BEGIN OF r__create_dog,
@@ -34,7 +34,7 @@ INTERFACE zif_interface016 PUBLIC.
          END OF r__create_dog.
   METHODS _create_dog
     IMPORTING
-      body TYPE body_create_dog
+      body          TYPE body_create_dog
     RETURNING
       VALUE(return) TYPE r__create_dog
     RAISING
